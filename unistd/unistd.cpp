@@ -205,12 +205,14 @@ gid_t getegid()
 }
 
 char* realpath(const char *path, char *resolved_path)
-{	if(!resolved_path)
-	{	return 0;
+{	char* res_path = NULL;
+	if(!resolved_path)
+	{	resolved_path = res_path = (char*)calloc(MAX_PATH, 1);
 	}
 	const DWORD  err = GetFullPathNameA(path,(DWORD) PATH_MAX,resolved_path,0);
-	if(err)
-	{	return 0;
+	if(err==0)
+	{	if (res_path) free(res_path);
+		return 0;
 	}
 	return resolved_path;
 }
