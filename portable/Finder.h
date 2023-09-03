@@ -20,7 +20,7 @@ namespace portable {
 class Finder
 :	public DIR
 {public:
-	WIN32_FIND_DATA data;
+	WIN32_FIND_DATAA data;
 	HANDLE h;
 	DWORD error;
 	char path[MAX_PATH];
@@ -42,7 +42,7 @@ class Finder
 #pragma warning(default:4996)
 #pragma warning(default:26495)
 	bool Open()
-	{	h = FindFirstFile(path,&data);
+	{	h = FindFirstFileA(path,&data);
 		if(INVALID_HANDLE_VALUE == h) 
 		{	return false;
 		}
@@ -84,7 +84,7 @@ class Finder
 		{	tell = 1;
 			return true;
 		}
-		if(!FindNextFile(h,&data))
+		if(!FindNextFileA(h,&data))
 		{	error = GetLastError();
 			return false;
 		}
