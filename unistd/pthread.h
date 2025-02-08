@@ -120,5 +120,7 @@ CFUNC int pthread_cond_timedwait(pthread_cond_t* restrict_cond,pthread_mutex_t* 
 CFUNC int pthread_cond_wait(pthread_cond_t* restrict_cond,pthread_mutex_t * restrict_mutex);
 CFUNC int pthread_mutex_destroy(pthread_mutex_t *mutex);
 CFUNC int pthread_mutex_init(pthread_mutex_t* restrict_mutex,const pthread_mutexattr_t * restrict_attr);
+CFUNC int pthread_mutexattr_init(pthread_mutexattr_t *attr);
+CFUNC int pthread_mutexattr_destroy(pthread_mutexattr_t *attr);
 
 #endif

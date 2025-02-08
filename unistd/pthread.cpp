@@ -234,3 +234,13 @@ int pthread_mutex_destroy(pthread_mutex_t *mutex)
 int pthread_mutex_init(pthread_mutex_t* restrict_mutex,const pthread_mutexattr_t * restrict_attr)
 {	STUB_NEG(pthread_mutex_init);
 }
+
+
+int pthread_mutexattr_init(pthread_mutexattr_t *attr)
+{	STUB_NEG(pthread_mutexattr_init);
+}
+
+
+int pthread_mutexattr_destroy(pthread_mutexattr_t *attr)
+{	STUB_NEG(pthread_mutexattr_destroy);
+}
